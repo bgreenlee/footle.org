@@ -3,6 +3,14 @@ layout: page
 title: Projects
 ---
 
+#### [Primary Every Democrat](https://primary.every.democrat)
+
+Site allowing visitors to sign up to be notified of upcoming Democratic primary elections and submit "receipts" calling out objectionable or laudable behavior by their congresspeople.
+
+#### [How Much Time Left](https://howmuchtimeleft.com) ([code](https://github.com/bgreenlee/how-much-time-left))
+
+Quick little static site showing how much time left until certain key events.
+
 #### [The License Plate Game](https://licenseplategame.fun) ([code](https://github.com/bgreenlee/license-plate-game))
 
 A web game where the challenge is to find as many words as possible containing the letters in the given license plate (in order!).
