@@ -5,6 +5,7 @@
   Brad Greenlee
   Email: brad@footle.org
   Mastodon: https://fiasco.social/@brad
+  Bluesky: @footle.org
   Github: bgreenlee
   Location: Seattle, WA
 

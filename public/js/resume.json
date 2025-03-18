@@ -1,0 +1,494 @@
+{
+    "basics": {
+        "name": "Brad Greenlee",
+        "label": "Independent Software Developer",
+        "image": "",
+        "email": "brad@footle.org",
+        "url": "https://footle.org",
+        "summary": "Technologist/software developer. I love fast-paced environments, hard problems, and shipping.",
+        "location": {
+            "city": "Mercer Island",
+            "countryCode": "US",
+            "region": "WA"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "bgreenlee",
+                "url": "https://github.com/bgreenlee"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "bgreenlee",
+                "url": "https://linkedin.com/in/bgreenlee"
+            },
+            {
+                "network": "Mastodon",
+                "username": "@brad@fiasco.social",
+                "url": "https://fiasco.social/@brad"
+            },
+            {
+                "network": "Bluesky",
+                "username": "@footle.org",
+                "url": "https://bsky.app/profile/footle.org"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "Fiasco Partners",
+            "position": "Partner",
+            "website": "",
+            "startDate": "2024-04",
+            "endDate": "",
+            "summary": "Boutique engineering consulting.",
+            "highlights": [
+                "Helped a $3B global systems integrator develop a strategy getting themselves out of a data quagmire, and lead development of their new data stack until they were able to staff the project.",
+                "Building Primary Every Democrat (https://primary.every.democrat), in an effort to pressure our Democratic leaders to step up."
+            ],
+            "location": "Remote"
+        },
+        {
+            "name": "Greenlee LLC",
+            "position": "Independent Software Developer",
+            "website": "",
+            "startDate": "2024-01",
+            "endDate": "",
+            "summary": "Independent software consulting",
+            "highlights": [
+                "Wikimedia Foundation - Developed data modeling guidelines for WMF's Hive/Iceberg data lake and recommended improvements to their metrics/experimentation event architecture",
+                "East Bay Kidical Mass - Built a site for managing give-aways of free bikes for kids."
+            ],
+            "location": "Greater Seattle Area"
+        },
+        {
+            "name": "Etsy",
+            "position": "Senior Staff Software Engineer",
+            "website": "https://www.etsy.com",
+            "startDate": "2012-07",
+            "endDate": "2024-01",
+            "summary": "Over 11 years working with a broad range of teams, primarily in Data Engineering.",
+            "highlights": [
+                "Advisor to teams across Data Engineering, including Data Platform, Data Governance and Privacy, Data Quality, and GCS Costs",
+                "Designed and built proof-of-concept of a point-in-time database using Change Data Capture (CDC), Kafka, and BigQuery",
+                "Helped build and maintain a clickstream event system, processing over 10 billion events/day, and having only 45 minutes of downtime in 9 years (99.999% uptime)",
+                "Designed and developed a gRPC-based messaging system that allowed teams across Engineering to deliver messages to Kafka and BigQuery from any client platform",
+                "Helped migrate our Kafka-based streaming infrastructure from on-prem to Google Cloud, and then to Kubernetes",
+                "Designed and implemented a \"layering\" system for experiments that allowed for global experiment holdout groups, which were essential for assessing the impact and interplay of experiments as we grew",
+                "Developed systems for identifying and filtering bot traffic",
+                "Designed and developed an enterprise search system that was used across the company",
+                "Built a system for controlling 80+ displays in our offices",
+                "Built a number of seller tools, including pricing, coupons, and shop suggestions",
+                "Post-mortem facilitator",
+                "Mentored many engineers, from interns to Staff-level",
+                "Taught Etsy School classes in Mac application development and outdoor rock climbing"
+            ],
+            "location": "Greater Seattle Area"
+        },
+        {
+            "name": "Twistle, Inc",
+            "position": "Senior Director - Product Engineering",
+            "website": "",
+            "startDate": "2012-01",
+            "endDate": "2012-07",
+            "summary": "Led product engineering efforts",
+            "highlights": [
+                "Established core infrastructure, including configuration management and deployment with Chef and Fabric, Git and GitHub for version control, and Backbone.js on the frontend",
+                "Did frontend development in Javascript, backend in Python/Django"
+            ],
+            "location": "Seattle, WA"
+        },
+        {
+            "name": "Daylife",
+            "position": "Developer",
+            "website": "",
+            "startDate": "2010-10",
+            "endDate": "2011-12",
+            "summary": "Content categorization and analytics development",
+            "highlights": [
+                "Designed a Mechanical Turk-based system for evaluating content extraction methods, allowing Daylife to significantly improve data quality",
+                "Evaluated content categorization tools and implemented a system to automatically categorize thousands of feeds",
+                "Designed and developed a web analytics pipeline on top of HBase"
+            ],
+            "location": "Greater Seattle Area"
+        },
+        {
+            "name": "McKinsey & Company",
+            "position": "Independent Contractor",
+            "website": "",
+            "startDate": "2010-03",
+            "endDate": "2010-09",
+            "summary": "Content management application development",
+            "highlights": [
+                "Wrote a Rails-based content management application",
+                "Used Solr/Tika to allow searching of Word, Excel, and Powerpoint documents"
+            ]
+        },
+        {
+            "name": "Infectious.com",
+            "position": "Independent Consultant",
+            "website": "",
+            "startDate": "2010-01",
+            "endDate": "2010-08",
+            "summary": "E-commerce development",
+            "highlights": [
+                "Developed and maintained a Rails-based e-commerce site"
+            ]
+        },
+        {
+            "name": "Wesabe",
+            "position": "Software Engineer / VP of Products",
+            "website": "",
+            "startDate": "2006-05",
+            "endDate": "2010-08",
+            "summary": "First engineer for one of the top personal finance management tools and communities",
+            "highlights": [
+                "Involved in the architecture and/or development of most of the site",
+                "Implemented the concept of a \"privacy wall\" to separate users' identities from their data",
+                "Led the implementation of white-label and web services products for financial institutions"
+            ],
+            "location": "San Francisco Bay Area"
+        },
+        {
+            "name": "Triporama",
+            "position": "Software Engineer",
+            "website": "",
+            "startDate": "2005-02",
+            "endDate": "2006-10",
+            "summary": "Primary architect and developer for a unique travel startup offering tools and resources for group travel planning",
+            "highlights": [
+                "Led the re-architecting and redesign of the application and website following a major shift in company focus",
+                "Development was done in Java, using Tapestry, Hibernate, Spring, and Tomcat",
+                "Helped with transitioning the site to Ruby on Rails"
+            ],
+            "location": "San Francisco Bay Area"
+        },
+        {
+            "name": "McKinsey & Co.",
+            "position": "Independent Consultant",
+            "website": "",
+            "startDate": "2001-05",
+            "endDate": "2006-10",
+            "summary": "Lead developer for a Perl-based intranet site",
+            "highlights": [
+                "Responsibilities included software design and development, database design and development, system architecture, and system administration"
+            ],
+            "location": "San Francisco Bay Area"
+        },
+        {
+            "name": "iSyndicate",
+            "position": "Senior Product Manager/Senior Software Engineer",
+            "website": "",
+            "startDate": "1998-06",
+            "endDate": "2001-04",
+            "summary": "Joined as the eighth employee and first full-time engineer, helping iSyndicate become a pioneer in Internet-syndicated content and Internet syndication infrastructure",
+            "highlights": [
+                "Developed many of their initial internal systems and end-user applications",
+                "Moved from Engineering to Product Management in March 2000",
+                "Responsible for conceiving, designing, developing, and project managing numerous products, both internal and customer-facing, using Java, Perl, XML, and relational databases",
+                "Research and evaluation of standards and vendor technologies",
+                "Input into overall product and engineering infrastructure strategies",
+                "Technical resource for partner and critical customer discussions"
+            ],
+            "location": "San Francisco Bay Area"
+        },
+        {
+            "name": "Noblestar Systems",
+            "position": "Regional Manager/Senior Developer, Emerging Technologies",
+            "website": "",
+            "startDate": "1996-12",
+            "endDate": "1998-06",
+            "summary": "Technical lead on a number of Java projects",
+            "highlights": [
+                "Developed a Java version of Allaire's Cold Fusion application server",
+                "Created a Java client-server database access tool using JDBC, RMI, and CORBA",
+                "Built a Web/Java-based course catalog and registration application, integrated into an existing PeopleSoft system",
+                "Spearheaded the establishment of a West Coast presence for the Emerging Technologies Division"
+            ]
+        },
+        {
+            "name": "iSYS Hungary",
+            "position": "Co-founder and CTO",
+            "website": "",
+            "startDate": "1995-05",
+            "endDate": "1996-11",
+            "summary": "Co-founded iSYS Hungary, Hungary's first business-focused Internet Service Provider and a leading web design and consulting firm",
+            "highlights": [
+                "Performed a critical role in nearly every aspect of the company's development, including business planning, technical management, recruiting, and financial controlling",
+                "Primary focus was on software development, most notably Intranet application design and development"
+            ]
+        },
+        {
+            "name": "American Management Systems",
+            "position": "Software Developer",
+            "website": "",
+            "startDate": "1993-09",
+            "endDate": "1995-05",
+            "summary": "Participated in two large programming projects",
+            "highlights": [
+                "Designed and developed Object-Oriented applications, using C++ and Smalltalk, in a Windows environment",
+                "Provided technical support for clients"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "I Can't Even",
+            "url": "https://apps.apple.com/us/app/i-cant-even-news-filter/id6738306756",
+            "startDate": "2024-11",
+            "endDate": "",
+            "description": "Safari Extension (Mac & iOS) that lets you redact or hide content on web pages.",
+            "highlights": [],
+            "keywords": [
+                "Safari",
+                "JavaScript"
+            ]
+        },
+        {
+            "name": "Primary Every Democrat!",
+            "url": "https://primary.every.democrat/",
+            "startDate": "2024-02",
+            "endDate": "",
+            "description": "Site allowing visitors to sign up to be notified of upcoming Democratic primary elections and submit \"receipts\" calling out objectionable or laudable behavior by their congresspeople.",
+            "highlights": [],
+            "keywords": [
+                "Python",
+                "Bulma (CSS Framework)",
+                "Flask"
+            ]
+        },
+        {
+            "name": "Spelling Beat",
+            "url": "https://spellingbeat.com/",
+            "startDate": "2021-02",
+            "endDate": "",
+            "description": "A little serverless app to find solutions for the NYT's Spelling Bee game.",
+            "highlights": [],
+            "keywords": [
+                "JavaScript"
+            ]
+        },
+        {
+            "name": "Sunrise in Your Menu Bar",
+            "url": "https://apps.apple.com/us/app/sunrise-in-your-menu-bar/id1548227736?mt=12",
+            "startDate": "2020-12",
+            "endDate": "",
+            "description": "Mac menu bar app that displays sunrise & sunset info for your (or any) location.",
+            "highlights": [],
+            "keywords": [
+                "MacOS",
+                "SwiftUI",
+                "Swift (Programming Language)"
+            ]
+        },
+        {
+            "name": "Wanderings",
+            "url": "https://wanderin.gs/about",
+            "startDate": "2017-10",
+            "endDate": "",
+            "description": "iOS app and accompanying website that tracks your location in the background and gives you a heatmap of your travels.",
+            "highlights": [],
+            "keywords": [
+                "JavaScript",
+                "iOS Development",
+                "Swift (Programming Language)"
+            ]
+        },
+        {
+            "name": "QR Life",
+            "url": "https://itunes.apple.com/us/app/qr-life/id1061418370?mt=8",
+            "startDate": "2015-11",
+            "endDate": "",
+            "description": "iOS app that turns QR codes into Game of Life simulations.",
+            "highlights": [],
+            "keywords": [
+                "iOS Development",
+                "Objective-C",
+                "Swift (Programming Language)"
+            ]
+        },
+        {
+            "name": "remotes.club",
+            "url": "https://remotes.club",
+            "startDate": "2014-05",
+            "endDate": "",
+            "description": "A home for remote workers. https://remotes.club",
+            "highlights": [],
+            "keywords": [
+                "PHP",
+                "Linux"
+            ]
+        },
+        {
+            "name": "pygtail",
+            "url": "https://github.com/bgreenlee/pygtail",
+            "startDate": "2011-06",
+            "endDate": "",
+            "description": "Pygtail reads log file lines that have not been read. It will even handle log files that have been rotated. Based on logcheck's logtail2",
+            "highlights": [],
+            "keywords": [
+                "Python"
+            ]
+        },
+        {
+            "name": "The License Plate Game",
+            "url": "https://licenseplategame.fun",
+            "startDate": "2024-12",
+            "endDate": "2025-01",
+            "description": "A web game where the challenge is to find as many words as possible containing the letters in the given license plate (in order!).",
+            "highlights": [],
+            "keywords": [
+                "JavaScript"
+            ]
+        },
+        {
+            "name": "WallpaperInfo",
+            "url": "https://github.com/bgreenlee/WallpaperInfo",
+            "startDate": "2024-11",
+            "endDate": "2024-11",
+            "description": "A little Mac menu bar app to display the current aerial wallpaper description.",
+            "highlights": [],
+            "keywords": [
+                "Swift (Programming Language)",
+                "SwiftUI",
+                "MacOS"
+            ]
+        },
+        {
+            "name": "sublime-github",
+            "url": "https://github.com/bgreenlee/sublime-github",
+            "startDate": "2011-07",
+            "endDate": "2021-09",
+            "description": "Github Gist plugin for Sublime Text 2/3",
+            "highlights": [],
+            "keywords": [
+                "Python",
+                "Sublime Text"
+            ]
+        },
+        {
+            "name": "WeatherBar",
+            "url": "https://footle.org/WeatherBar/",
+            "startDate": "2015-03",
+            "endDate": "2018-05",
+            "description": "A walk-through creating an OS X menu bar app in Swift.",
+            "highlights": [],
+            "keywords": [
+                "MacOS",
+                "Swift (Programming Language)"
+            ]
+        },
+        {
+            "name": "JobTracker",
+            "url": "https://footle.org/JobTracker/",
+            "startDate": "2013-11",
+            "endDate": "2015-01",
+            "description": "A Mac menu bar app interface to the Hadoop JobTracker. It gives you easy access to jobs in JobTracker, and provides Growl/Notification Center notices of starting, completed, and failed jobs.",
+            "highlights": [],
+            "keywords": [
+                "Objective-C",
+                "MacOS",
+                "Hadoop"
+            ]
+        },
+        {
+            "name": "Squeeler",
+            "url": "https://footle.org/Squeeler/",
+            "startDate": "2014-02",
+            "endDate": "2014-04",
+            "description": "A Mac OS X app that sits quietly in your menu bar and alerts you when it sees something hogging CPU.",
+            "highlights": [],
+            "keywords": [
+                "Objective-C",
+                "MacOS"
+            ]
+        },
+        {
+            "name": "PassKeeper",
+            "url": "http://passkeeper.com/",
+            "startDate": "1995-12",
+            "endDate": "1996-04",
+            "description": "An ancient Windows utility that allows you to keep an encrypted list of accounts with usernames, passwords, and notes. Possibly the first commercial password manager.",
+            "highlights": [],
+            "keywords": [
+                "C++",
+                "Windows"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Programming Languages",
+            "keywords": [
+                "Python",
+                "Java",
+                "Ruby",
+                "Swift",
+                "Rust",
+                "Objective-C",
+                "Perl",
+                "PHP",
+                "C/C++",
+                "JavaScript"
+            ]
+        },
+        {
+            "name": "Frameworks",
+            "keywords": [
+                "Rails",
+                "Django",
+                "Flask",
+                "Bulma",
+                "SwiftUI"
+            ]
+        },
+        {
+            "name": "Databases",
+            "keywords": [
+                "MySQL",
+                "Postgres",
+                "HBase",
+                "BigQuery",
+                "Iceberg"
+            ]
+        },
+        {
+            "name": "Infrastructure",
+            "keywords": [
+                "Apache Kafka",
+                "System Architecture",
+                "Google Cloud Platform (GCP)",
+                "AWS/EC2",
+                "Linux",
+                "MacOS",
+                "Windows"
+            ]
+        },
+        {
+            "name": "Big Data",
+            "keywords": [
+                "Data Engineering",
+                "Event Processing",
+                "Streaming",
+                "Hadoop"
+            ]
+        },
+        {
+            "name": "Mobile",
+            "keywords": [
+                "iOS Development",
+                "Safari Extensions"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "University of Michigan",
+            "url": "https://umich.edu/",
+            "area": "Computer Science",
+            "studyType": "Bachelor of Science, with Honors",
+            "startDate": "1989-09-01",
+            "endDate": "1993-05-01"
+        }
+    ]
+}

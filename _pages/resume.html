@@ -1,0 +1,1614 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Brad Greenlee</title>
+    <meta
+      name="description"
+      content="Technologist/software developer. I love hard problems and shipping."
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --color-background-light: #ffffff;
+        --color-dimmed-light: #f3f4f5;
+        --color-primary-light: #191e23;
+        --color-secondary-light: #6c7781;
+        --color-accent-light: #0073aa;
+        --color-background-dark: #191e23;
+        --color-dimmed-dark: #23282d;
+        --color-primary-dark: #fbfbfc;
+        --color-secondary-dark: #ccd0d4;
+        --color-accent-dark: #00a0d2;
+        --color-background: var(--color-background-light);
+        --color-dimmed: var(--color-dimmed-light);
+        --color-primary: var(--color-primary-light);
+        --color-secondary: var(--color-secondary-light);
+        --color-accent: var(--color-accent-light);
+        --scale-ratio: 1.25;
+        --scale0: 1rem;
+        --scale1: calc(var(--scale0) * var(--scale-ratio));
+        --scale2: calc(var(--scale1) * var(--scale-ratio));
+        --scale3: calc(var(--scale2) * var(--scale-ratio));
+        --scale4: calc(var(--scale3) * var(--scale-ratio));
+        --scale5: calc(var(--scale4) * var(--scale-ratio));
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-background: var(--color-background-dark);
+          --color-dimmed: var(--color-dimmed-dark);
+          --color-primary: var(--color-primary-dark);
+          --color-secondary: var(--color-secondary-dark);
+          --color-accent: var(--color-accent-dark);
+        }
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 14px;
+      }
+      body {
+        background: var(--color-background);
+        color: var(--color-primary);
+        display: grid;
+        font: 1em/1.5 Lato, sans-serif;
+        gap: 2em;
+        grid-template-columns:
+          [full-start] 1fr [main-start side-start] minmax(min-content, 12em)
+          [side-end content-start] minmax(min-content, 36em)
+          [main-end content-end] 1fr [full-end];
+        grid-template-rows: auto [content] 0;
+        margin-bottom: 4em;
+      }
+      body:before {
+        content: "";
+        grid-column: full;
+        grid-row: content;
+      }
+      ol,
+      ul {
+        padding-left: 1em;
+      }
+      :not(.icon-list, .tag-list) > li + li {
+        margin-top: 0.4em;
+      }
+      li::marker,
+      .network {
+        color: var(--color-secondary);
+      }
+      a {
+        color: var(--color-accent);
+        text-decoration: none;
+      }
+      a:focus,
+      a:hover {
+        text-decoration: underline;
+      }
+      h1,
+      h2,
+      h3,
+      h5 {
+        font-weight: 400;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+      }
+      h1 {
+        font-size: var(--scale5);
+      }
+      h2 {
+        color: var(--color-secondary);
+        font-size: var(--scale4);
+      }
+      h3 {
+        color: var(--color-secondary);
+        font-size: var(--scale3);
+        grid-column: side;
+        margin-bottom: 1rem;
+      }
+      h4 {
+        font-size: var(--scale2);
+      }
+      h5 {
+        font-size: var(--scale1);
+      }
+      h6 {
+        font-size: var(--scale0);
+      }
+      blockquote {
+        border-left: 0.2em solid var(--color-dimmed);
+        padding-left: 1em;
+      }
+      cite {
+        color: var(--color-secondary);
+        font-style: inherit;
+      }
+      cite:before {
+        content: "— ";
+      }
+      svg {
+        margin-right: 0.2em;
+        vertical-align: text-bottom;
+      }
+      .masthead {
+        background: var(--color-dimmed);
+        display: inherit;
+        gap: inherit;
+        grid-column: full;
+        grid-template-columns: inherit;
+        padding: 4em 0;
+        text-align: center;
+      }
+      .masthead > *,
+      section {
+        grid-column: main;
+      }
+      .masthead > img {
+        border: 4px solid;
+        border-radius: 50%;
+        margin: 0 auto;
+        max-width: 12em;
+      }
+      article > * + *,
+      blockquote > * + *,
+      .timeline > div > * + * {
+        margin-top: 0.6em;
+      }
+      .meta {
+        color: var(--color-secondary);
+      }
+      .stack {
+        display: grid;
+        gap: 1.5em;
+      }
+      .icon-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4em 1em;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+      }
+      .grid-list {
+        display: grid;
+        gap: 1em;
+      }
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4em;
+        list-style: none;
+        padding: 0;
+      }
+      .tag-list > li {
+        background: var(--color-dimmed);
+        border-radius: 0.2em;
+        padding: 0.2em 0.6em;
+      }
+      .timeline > div {
+        position: relative;
+      }
+      .timeline > div:not(:last-child) {
+        padding-bottom: 1rem;
+      }
+      .timeline > div:not(:last-child):before {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        left: -15px;
+        width: 2px;
+        height: 100%;
+        background: var(--color-secondary);
+      }
+      .timeline > div:not(:only-child):after {
+        content: "";
+        position: absolute;
+        top: 0.6rem;
+        left: -20px;
+        width: 8px;
+        height: 8px;
+        background: var(--color-secondary);
+        border: 2px solid var(--color-background);
+        border-radius: 50%;
+      }
+      @media print, (min-width: 48em) {
+        h3 {
+          text-align: right;
+          margin-bottom: inherit;
+        }
+        .masthead {
+          text-align: inherit;
+        }
+        .masthead > *,
+        section {
+          grid-column: content;
+        }
+        .masthead img {
+          grid-column: side;
+          grid-row: span 2;
+          max-width: 100%;
+        }
+        section {
+          display: contents;
+        }
+        .icon-list {
+          flex-direction: column;
+        }
+        .grid-list {
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(calc((100% - 1em) / 2), 1fr)
+          );
+        }
+      }
+      @media print {
+        .duration {
+          display: none;
+        }
+      }
+    </style>
+    <script type="module">
+      const pluralize = (num, str) =>
+        `${num} ${num === 1 ? str : str.concat("s")}`;
+
+      class TimeDuration extends HTMLElement {
+        connectedCallback() {
+          const [from, to] = this.querySelectorAll("time");
+          if (!from) return;
+
+          const startDate = new Date(from.dateTime || from.textContent);
+          const endDate = new Date(
+            to ? to.dateTime || to.textContent : Date.now()
+          );
+          const diffDate = new Date(endDate - startDate);
+
+          const years = diffDate.getFullYear() - 1970;
+          const months = diffDate.getMonth();
+          const days = diffDate.getDate() - 1;
+
+          const segments = [
+            years && pluralize(years, "yr"),
+            months && pluralize(months, "mo"),
+            days && !years && !months && pluralize(days, "day"),
+          ].filter(Boolean);
+          if (!segments.length) return;
+
+          const duration = document.createElement("time");
+          duration.classList.add("duration");
+          duration.textContent = "· ".concat(segments.join(" "));
+
+          this.append(" ", duration);
+        }
+      }
+
+      customElements.define("time-duration", TimeDuration);
+    </script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div>
+        <h1>Brad Greenlee</h1>
+        <h2>Independent Software Developer</h2>
+      </div>
+      <article>
+        <p>
+          Technologist/software developer. I love fast-paced environments, hard
+          problems, and shipping.
+        </p>
+      </article>
+      <ul class="icon-list">
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-map-pin"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Mercer Island, United States
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-mail"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <a href="mailto:brad@footle.org">brad@footle.org</a>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-link"
+          >
+            <path
+              d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+            ></path>
+            <path
+              d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+            ></path>
+          </svg>
+          <a href="https://footle.org">footle.org</a>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-github"
+          >
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+            ></path>
+          </svg>
+          <a href="https://github.com/bgreenlee">bgreenlee</a>
+          <span class="network">(GitHub)</span>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-linkedin"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <a href="https://linkedin.com/in/bgreenlee">bgreenlee</a>
+          <span class="network">(LinkedIn)</span>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-user"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <a href="https://fiasco.social/@brad">@brad@fiasco.social</a>
+          <span class="network">(Mastodon)</span>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-user"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <a href="https://bsky.app/profile/footle.org">@footle.org</a>
+          <span class="network">(Bluesky)</span>
+        </li>
+      </ul>
+    </header>
+
+    <section id="work">
+      <h3>Work</h3>
+      <div class="stack">
+        <article>
+          <header>
+            <h4>Fiasco Partners</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Partner</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2024-04">Apr 2024</time> –
+                      Present</time-duration
+                    >
+                  </div>
+                  <div>Remote</div>
+                </div>
+              </div>
+              <p>Boutique engineering consulting.</p>
+
+              <ul>
+                <li>
+                  <p>
+                    Helped a $3B global systems integrator develop a strategy
+                    getting themselves out of a data quagmire, and lead
+                    development of their new data stack until they were able to
+                    staff the project.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Building Primary Every Democrat
+                    (https://primary.every.democrat), in an effort to pressure
+                    our Democratic leaders to step up.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>Greenlee LLC</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Independent Software Developer</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2024-01">Jan 2024</time> –
+                      Present</time-duration
+                    >
+                  </div>
+                  <div>Greater Seattle Area</div>
+                </div>
+              </div>
+              <p>Independent software consulting</p>
+
+              <ul>
+                <li>
+                  <p>
+                    Wikimedia Foundation - Developed data modeling guidelines
+                    for WMF's Hive/Iceberg data lake and recommended
+                    improvements to their metrics/experimentation event
+                    architecture
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    East Bay Kidical Mass - Built a site for managing give-aways
+                    of free bikes for kids.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>Etsy</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Senior Staff Software Engineer</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2012-07">Jul 2012</time> –
+                      <time datetime="2024-01">Jan 2024</time></time-duration
+                    >
+                  </div>
+                  <div>Greater Seattle Area</div>
+                </div>
+              </div>
+              <p>
+                Over 11 years working with a broad range of teams, primarily in
+                Data Engineering.
+              </p>
+
+              <ul>
+                <li>
+                  <p>
+                    Advisor to teams across Data Engineering, including Data
+                    Platform, Data Governance and Privacy, Data Quality, and GCS
+                    Costs
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Designed and built proof-of-concept of a point-in-time
+                    database using Change Data Capture (CDC), Kafka, and
+                    BigQuery
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Helped build and maintain a clickstream event system,
+                    processing over 10 billion events/day, and having only 45
+                    minutes of downtime in 9 years (99.999% uptime)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Designed and developed a gRPC-based messaging system that
+                    allowed teams across Engineering to deliver messages to
+                    Kafka and BigQuery from any client platform
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Helped migrate our Kafka-based streaming infrastructure from
+                    on-prem to Google Cloud, and then to Kubernetes
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Designed and implemented a &quot;layering&quot; system for
+                    experiments that allowed for global experiment holdout
+                    groups, which were essential for assessing the impact and
+                    interplay of experiments as we grew
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Developed systems for identifying and filtering bot traffic
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Designed and developed an enterprise search system that was
+                    used across the company
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Built a system for controlling 80+ displays in our offices
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Built a number of seller tools, including pricing, coupons,
+                    and shop suggestions
+                  </p>
+                </li>
+                <li><p>Post-mortem facilitator</p></li>
+                <li>
+                  <p>Mentored many engineers, from interns to Staff-level</p>
+                </li>
+                <li>
+                  <p>
+                    Taught Etsy School classes in Mac application development
+                    and outdoor rock climbing
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>Twistle, Inc</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Senior Director - Product Engineering</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2012-01">Jan 2012</time> –
+                      <time datetime="2012-07">Jul 2012</time></time-duration
+                    >
+                  </div>
+                  <div>Seattle, WA</div>
+                </div>
+              </div>
+              <p>Led product engineering efforts</p>
+
+              <ul>
+                <li>
+                  <p>
+                    Established core infrastructure, including configuration
+                    management and deployment with Chef and Fabric, Git and
+                    GitHub for version control, and Backbone.js on the frontend
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Did frontend development in Javascript, backend in
+                    Python/Django
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>Daylife</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Developer</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2010-10">Oct 2010</time> –
+                      <time datetime="2011-12">Dec 2011</time></time-duration
+                    >
+                  </div>
+                  <div>Greater Seattle Area</div>
+                </div>
+              </div>
+              <p>Content categorization and analytics development</p>
+
+              <ul>
+                <li>
+                  <p>
+                    Designed a Mechanical Turk-based system for evaluating
+                    content extraction methods, allowing Daylife to
+                    significantly improve data quality
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Evaluated content categorization tools and implemented a
+                    system to automatically categorize thousands of feeds
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Designed and developed a web analytics pipeline on top of
+                    HBase
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>McKinsey & Company</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Independent Contractor</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2010-03">Mar 2010</time> –
+                      <time datetime="2010-09">Sep 2010</time></time-duration
+                    >
+                  </div>
+                </div>
+              </div>
+              <p>Content management application development</p>
+
+              <ul>
+                <li>
+                  <p>Wrote a Rails-based content management application</p>
+                </li>
+                <li>
+                  <p>
+                    Used Solr/Tika to allow searching of Word, Excel, and
+                    Powerpoint documents
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>Infectious.com</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Independent Consultant</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2010-01">Jan 2010</time> –
+                      <time datetime="2010-08">Aug 2010</time></time-duration
+                    >
+                  </div>
+                </div>
+              </div>
+              <p>E-commerce development</p>
+
+              <ul>
+                <li>
+                  <p>Developed and maintained a Rails-based e-commerce site</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>Wesabe</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Software Engineer / VP of Products</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2006-05">May 2006</time> –
+                      <time datetime="2010-08">Aug 2010</time></time-duration
+                    >
+                  </div>
+                  <div>San Francisco Bay Area</div>
+                </div>
+              </div>
+              <p>
+                First engineer for one of the top personal finance management
+                tools and communities
+              </p>
+
+              <ul>
+                <li>
+                  <p>
+                    Involved in the architecture and/or development of most of
+                    the site
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Implemented the concept of a &quot;privacy wall&quot; to
+                    separate users' identities from their data
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Led the implementation of white-label and web services
+                    products for financial institutions
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>Triporama</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Software Engineer</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2005-02">Feb 2005</time> –
+                      <time datetime="2006-10">Oct 2006</time></time-duration
+                    >
+                  </div>
+                  <div>San Francisco Bay Area</div>
+                </div>
+              </div>
+              <p>
+                Primary architect and developer for a unique travel startup
+                offering tools and resources for group travel planning
+              </p>
+
+              <ul>
+                <li>
+                  <p>
+                    Led the re-architecting and redesign of the application and
+                    website following a major shift in company focus
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Development was done in Java, using Tapestry, Hibernate,
+                    Spring, and Tomcat
+                  </p>
+                </li>
+                <li>
+                  <p>Helped with transitioning the site to Ruby on Rails</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>McKinsey & Co.</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Independent Consultant</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="2001-05">May 2001</time> –
+                      <time datetime="2006-10">Oct 2006</time></time-duration
+                    >
+                  </div>
+                  <div>San Francisco Bay Area</div>
+                </div>
+              </div>
+              <p>Lead developer for a Perl-based intranet site</p>
+
+              <ul>
+                <li>
+                  <p>
+                    Responsibilities included software design and development,
+                    database design and development, system architecture, and
+                    system administration
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>iSyndicate</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Senior Product Manager/Senior Software Engineer</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="1998-06">Jun 1998</time> –
+                      <time datetime="2001-04">Apr 2001</time></time-duration
+                    >
+                  </div>
+                  <div>San Francisco Bay Area</div>
+                </div>
+              </div>
+              <p>
+                Joined as the eighth employee and first full-time engineer,
+                helping iSyndicate become a pioneer in Internet-syndicated
+                content and Internet syndication infrastructure
+              </p>
+
+              <ul>
+                <li>
+                  <p>
+                    Developed many of their initial internal systems and
+                    end-user applications
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Moved from Engineering to Product Management in March 2000
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Responsible for conceiving, designing, developing, and
+                    project managing numerous products, both internal and
+                    customer-facing, using Java, Perl, XML, and relational
+                    databases
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Research and evaluation of standards and vendor technologies
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Input into overall product and engineering infrastructure
+                    strategies
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Technical resource for partner and critical customer
+                    discussions
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>Noblestar Systems</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>
+                  Regional Manager/Senior Developer, Emerging Technologies
+                </h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="1996-12">Dec 1996</time> –
+                      <time datetime="1998-06">Jun 1998</time></time-duration
+                    >
+                  </div>
+                </div>
+              </div>
+              <p>Technical lead on a number of Java projects</p>
+
+              <ul>
+                <li>
+                  <p>
+                    Developed a Java version of Allaire's Cold Fusion
+                    application server
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Created a Java client-server database access tool using
+                    JDBC, RMI, and CORBA
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Built a Web/Java-based course catalog and registration
+                    application, integrated into an existing PeopleSoft system
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Spearheaded the establishment of a West Coast presence for
+                    the Emerging Technologies Division
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>iSYS Hungary</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Co-founder and CTO</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="1995-05">May 1995</time> –
+                      <time datetime="1996-11">Nov 1996</time></time-duration
+                    >
+                  </div>
+                </div>
+              </div>
+              <p>
+                Co-founded iSYS Hungary, Hungary's first business-focused
+                Internet Service Provider and a leading web design and
+                consulting firm
+              </p>
+
+              <ul>
+                <li>
+                  <p>
+                    Performed a critical role in nearly every aspect of the
+                    company's development, including business planning,
+                    technical management, recruiting, and financial controlling
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Primary focus was on software development, most notably
+                    Intranet application design and development
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <header>
+            <h4>American Management Systems</h4>
+            <div class="meta"></div>
+          </header>
+          <div class="timeline">
+            <div>
+              <div>
+                <h5>Software Developer</h5>
+                <div class="meta">
+                  <div>
+                    <time-duration
+                      ><time datetime="1993-09">Sep 1993</time> –
+                      <time datetime="1995-05">May 1995</time></time-duration
+                    >
+                  </div>
+                </div>
+              </div>
+              <p>Participated in two large programming projects</p>
+
+              <ul>
+                <li>
+                  <p>
+                    Designed and developed Object-Oriented applications, using
+                    C++ and Smalltalk, in a Windows environment
+                  </p>
+                </li>
+                <li><p>Provided technical support for clients</p></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <h3>Education</h3>
+      <div class="stack">
+        <article>
+          <header>
+            <h4><a href="https://umich.edu/">University of Michigan</a></h4>
+            <div class="meta">
+              <strong>Computer Science</strong>
+              <div>
+                <time-duration
+                  ><time datetime="1989-09-01">Sep 1989</time> –
+                  <time datetime="1993-05-01">May 1993</time></time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>Bachelor of Science, with Honors</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="stack">
+        <article>
+          <header>
+            <h4>
+              <a
+                href="https://apps.apple.com/us/app/i-cant-even-news-filter/id6738306756"
+                >I Can't Even</a
+              >
+            </h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2024-11">Nov 2024</time> –
+                  Present</time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            Safari Extension (Mac &amp; iOS) that lets you redact or hide
+            content on web pages.
+          </p>
+
+          <ul class="tag-list">
+            <li>Safari</li>
+            <li>JavaScript</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4>
+              <a href="https://primary.every.democrat/"
+                >Primary Every Democrat!</a
+              >
+            </h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2024-02">Feb 2024</time> –
+                  Present</time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            Site allowing visitors to sign up to be notified of upcoming
+            Democratic primary elections and submit &quot;receipts&quot; calling
+            out objectionable or laudable behavior by their congresspeople.
+          </p>
+
+          <ul class="tag-list">
+            <li>Python</li>
+            <li>Bulma (CSS Framework)</li>
+            <li>Flask</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4><a href="https://spellingbeat.com/">Spelling Beat</a></h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2021-02">Feb 2021</time> –
+                  Present</time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            A little serverless app to find solutions for the NYT's Spelling Bee
+            game.
+          </p>
+
+          <ul class="tag-list">
+            <li>JavaScript</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4>
+              <a
+                href="https://apps.apple.com/us/app/sunrise-in-your-menu-bar/id1548227736?mt=12"
+                >Sunrise in Your Menu Bar</a
+              >
+            </h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2020-12">Dec 2020</time> –
+                  Present</time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            Mac menu bar app that displays sunrise &amp; sunset info for your
+            (or any) location.
+          </p>
+
+          <ul class="tag-list">
+            <li>MacOS</li>
+            <li>SwiftUI</li>
+            <li>Swift (Programming Language)</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4><a href="https://wanderin.gs/about">Wanderings</a></h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2017-10">Oct 2017</time> –
+                  Present</time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            iOS app and accompanying website that tracks your location in the
+            background and gives you a heatmap of your travels.
+          </p>
+
+          <ul class="tag-list">
+            <li>JavaScript</li>
+            <li>iOS Development</li>
+            <li>Swift (Programming Language)</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4>
+              <a
+                href="https://itunes.apple.com/us/app/qr-life/id1061418370?mt=8"
+                >QR Life</a
+              >
+            </h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2015-11">Nov 2015</time> –
+                  Present</time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>iOS app that turns QR codes into Game of Life simulations.</p>
+
+          <ul class="tag-list">
+            <li>iOS Development</li>
+            <li>Objective-C</li>
+            <li>Swift (Programming Language)</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4><a href="https://remotes.club">remotes.club</a></h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2014-05">May 2014</time> –
+                  Present</time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>A home for remote workers. https://remotes.club</p>
+
+          <ul class="tag-list">
+            <li>PHP</li>
+            <li>Linux</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4><a href="https://github.com/bgreenlee/pygtail">pygtail</a></h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2011-06">Jun 2011</time> –
+                  Present</time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            Pygtail reads log file lines that have not been read. It will even
+            handle log files that have been rotated. Based on logcheck's
+            logtail2
+          </p>
+
+          <ul class="tag-list">
+            <li>Python</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4>
+              <a href="https://licenseplategame.fun">The License Plate Game</a>
+            </h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2024-12">Dec 2024</time> –
+                  <time datetime="2025-01">Jan 2025</time></time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            A web game where the challenge is to find as many words as possible
+            containing the letters in the given license plate (in order!).
+          </p>
+
+          <ul class="tag-list">
+            <li>JavaScript</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4>
+              <a href="https://github.com/bgreenlee/WallpaperInfo"
+                >WallpaperInfo</a
+              >
+            </h4>
+            <div class="meta">
+              <div></div>
+              <div><time datetime="2024-11">Nov 2024</time></div>
+            </div>
+          </header>
+          <p>
+            A little Mac menu bar app to display the current aerial wallpaper
+            description.
+          </p>
+
+          <ul class="tag-list">
+            <li>Swift (Programming Language)</li>
+            <li>SwiftUI</li>
+            <li>MacOS</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4>
+              <a href="https://github.com/bgreenlee/sublime-github"
+                >sublime-github</a
+              >
+            </h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2011-07">Jul 2011</time> –
+                  <time datetime="2021-09">Sep 2021</time></time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>Github Gist plugin for Sublime Text 2/3</p>
+
+          <ul class="tag-list">
+            <li>Python</li>
+            <li>Sublime Text</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4><a href="https://footle.org/WeatherBar/">WeatherBar</a></h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2015-03">Mar 2015</time> –
+                  <time datetime="2018-05">May 2018</time></time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>A walk-through creating an OS X menu bar app in Swift.</p>
+
+          <ul class="tag-list">
+            <li>MacOS</li>
+            <li>Swift (Programming Language)</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4><a href="https://footle.org/JobTracker/">JobTracker</a></h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2013-11">Nov 2013</time> –
+                  <time datetime="2015-01">Jan 2015</time></time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            A Mac menu bar app interface to the Hadoop JobTracker. It gives you
+            easy access to jobs in JobTracker, and provides Growl/Notification
+            Center notices of starting, completed, and failed jobs.
+          </p>
+
+          <ul class="tag-list">
+            <li>Objective-C</li>
+            <li>MacOS</li>
+            <li>Hadoop</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4><a href="https://footle.org/Squeeler/">Squeeler</a></h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="2014-02">Feb 2014</time> –
+                  <time datetime="2014-04">Apr 2014</time></time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            A Mac OS X app that sits quietly in your menu bar and alerts you
+            when it sees something hogging CPU.
+          </p>
+
+          <ul class="tag-list">
+            <li>Objective-C</li>
+            <li>MacOS</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h4><a href="http://passkeeper.com/">PassKeeper</a></h4>
+            <div class="meta">
+              <div></div>
+              <div>
+                <time-duration
+                  ><time datetime="1995-12">Dec 1995</time> –
+                  <time datetime="1996-04">Apr 1996</time></time-duration
+                >
+              </div>
+            </div>
+          </header>
+          <p>
+            An ancient Windows utility that allows you to keep an encrypted list
+            of accounts with usernames, passwords, and notes. Possibly the first
+            commercial password manager.
+          </p>
+
+          <ul class="tag-list">
+            <li>C++</li>
+            <li>Windows</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h3>Skills</h3>
+      <div class="grid-list">
+        <div>
+          <h4>Programming Languages</h4>
+
+          <ul class="tag-list">
+            <li>Python</li>
+            <li>Java</li>
+            <li>Ruby</li>
+            <li>Swift</li>
+            <li>Rust</li>
+            <li>Objective-C</li>
+            <li>Perl</li>
+            <li>PHP</li>
+            <li>C/C++</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Frameworks</h4>
+
+          <ul class="tag-list">
+            <li>Rails</li>
+            <li>Django</li>
+            <li>Flask</li>
+            <li>Bulma</li>
+            <li>SwiftUI</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Databases</h4>
+
+          <ul class="tag-list">
+            <li>MySQL</li>
+            <li>Postgres</li>
+            <li>HBase</li>
+            <li>BigQuery</li>
+            <li>Iceberg</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Infrastructure</h4>
+
+          <ul class="tag-list">
+            <li>Apache Kafka</li>
+            <li>System Architecture</li>
+            <li>Google Cloud Platform (GCP)</li>
+            <li>AWS/EC2</li>
+            <li>Linux</li>
+            <li>MacOS</li>
+            <li>Windows</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Big Data</h4>
+
+          <ul class="tag-list">
+            <li>Data Engineering</li>
+            <li>Event Processing</li>
+            <li>Streaming</li>
+            <li>Hadoop</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Mobile</h4>
+
+          <ul class="tag-list">
+            <li>iOS Development</li>
+            <li>Safari Extensions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
