@@ -5,11 +5,11 @@
         "image": "",
         "email": "brad@footle.org",
         "url": "https://footle.org",
-        "summary": "Technologist/software developer. I love fast-paced environments, hard problems, and shipping.",
+        "summary": "Veteran technologist and software architect with 30+ years designing high-scale systems that solve complex problems. Expert in cloud infrastructure, full-stack development, and building innovative tools across mobile, web, and desktop. Equally effective leading engineering teams and delivering hands-on solutions in fast-paced environments from early startups to established enterprises. tl;dr: I love hard problems and shipping.",
         "location": {
             "city": "Mercer Island",
             "countryCode": "US",
-            "region": "WA"
+            "region": "Washington"
         },
         "profiles": [
             {
@@ -421,6 +421,7 @@
             "name": "Programming Languages",
             "keywords": [
                 "Python",
+                "Go",
                 "Java",
                 "Ruby",
                 "Swift",
@@ -478,6 +479,13 @@
             "keywords": [
                 "iOS Development",
                 "Safari Extensions"
+            ]
+        },
+        {
+            "name": "Other",
+            "keywords": [
+                "Human Factors & System Safety",
+                "Data Governance & Privacy"
             ]
         }
     ],
