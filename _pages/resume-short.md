@@ -1,9 +1,24 @@
 ---
-layout: null
+layout: page
+title: "Brad Greenlee"
 ---
 
-# Brad Greenlee
-**brad@footle.org** / **Mercer Island, Washington** / **[footle.org](https://footle.org)** / **[GitHub: bgreenlee](https://github.com/bgreenlee)** / **[LinkedIn: bgreenlee](https://linkedin.com/in/bgreenlee)**
+<style>
+@media print {
+    html {
+        font-size: 70%;
+    }
+    .sidebar {
+        display: none;
+    }
+    .content {
+        margin-left: 2em;
+        max-width: inherit;
+    }
+}
+</style>
+
+**<brad@footle.org>** / **Mercer Island, Washington** / **[footle.org](https://footle.org)** / **[GitHub: bgreenlee](https://github.com/bgreenlee)** / **[LinkedIn: bgreenlee](https://linkedin.com/in/bgreenlee)**
 
 ## PROFESSIONAL SUMMARY
 Veteran technologist and software architect with 30+ years designing high-scale systems that solve complex problems. Expert in cloud infrastructure, full-stack development, and building innovative tools across mobile, web, and desktop. Equally effective leading engineering teams and delivering hands-on solutions in fast-paced environments.
