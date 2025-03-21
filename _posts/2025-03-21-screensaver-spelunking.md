@@ -95,7 +95,7 @@ The next piece was to find all the string keys. The above `ZASSET` table has a `
 }
 ```
 
-I looks like you can even get different descriptions based on how far along you are in the screensaver video.
+It looks like you can even get different descriptions based on how far along you are in the screensaver video.
 
 ## The Final Boss: Getting the Active Screensaver
 
