@@ -124,4 +124,4 @@ The result:
 
 Sadly, I wouldn't be able to put this in the App Store because of Apple's sandboxing rules, but feel free to [download the binary](https://github.com/bgreenlee/WallpaperInfo/releases/latest) from my repo.
 
-It would be nice to have the description on the screensaver itself, like the AppleTV does it, but I don't think that's possible short of either editing the videos to add descriptions, or running your own version of the screensaver. But given that Apple could easily add this as a feature (please!), I didn't want to invest too much more time into this. I considered my itch scratched.
+It would be nice to have the description on the screensaver itself, like the AppleTV does, but I don't think that's possible short of either editing the videos to add descriptions, or running your own version of the screensaver. But given that Apple could easily add this as a feature (please!), I didn't want to invest too much more time into this. I considered my itch scratched.
