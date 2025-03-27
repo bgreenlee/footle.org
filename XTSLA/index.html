@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSLA ETF Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TSLA ETF Analyzer</h1>
+            <p>Enter ETF ticker symbols to check for TSLA holdings</p>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <textarea id="etf-input" placeholder="Enter ETF ticker symbols (comma or space separated, e.g. SPY, QQQ, ARKK)"></textarea>
+                <button id="analyze-btn">Analyze ETFs</button>
+            </div>
+            
+            <div class="results-section">
+                <div id="results-container"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Data last updated: March 27, 2025</p>
+        </footer>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

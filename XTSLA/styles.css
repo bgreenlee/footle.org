@@ -1,0 +1,158 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: #e82127; /* Tesla red */
+    margin-bottom: 0.5rem;
+}
+
+/* Main content */
+.input-section {
+    margin-bottom: 2rem;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+button {
+    background-color: #e82127; /* Tesla red */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c81e24;
+}
+
+.results-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    min-height: 200px;
+}
+
+/* Results styling */
+.etf-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #e82127;
+}
+
+.etf-card.not-found {
+    border-left-color: #999;
+    background-color: #f1f1f1;
+}
+
+.ticker-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.ticker {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.full-name {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+.percentage {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e82127;
+    text-align: right;
+    white-space: nowrap;
+    padding-left: 1rem;
+}
+
+.not-found .percentage {
+    color: #999;
+}
+
+.result-stats {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    textarea {
+        height: 80px;
+    }
+    
+    .etf-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .ticker-container {
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    
+    .percentage {
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
